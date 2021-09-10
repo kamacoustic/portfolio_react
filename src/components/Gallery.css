@@ -1,0 +1,39 @@
+
+
+.gallery_container {
+    margin: 5px;
+    border: 3px solid #ccc;
+    border-radius: 50px 50px 50px 50px;
+    width: 50%;
+  }
+  
+  .gallery_container:hover {
+    border: 3px solid #777;
+  }
+  
+  .gallery_container a > img {
+    width: 100%;
+    height: auto;
+    border-radius: 43px;
+    cursor: pointer;
+  }
+  
+  /* div.gallery button {
+    padding: 6px 15px;
+    font-size: 10px;
+    background-color: forestgreen;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.1em;
+    color: #fff;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    
+  } */
+  
+  .desc > p {
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+    width: auto;
+  }

@@ -1,0 +1,20 @@
+.footer{
+    border-top: 1px solid azure;
+    padding: 10px;
+    display: flex;
+}
+
+.footer > img {
+    width: 80px;
+    height: auto;
+    float: right;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 600px){
+
+.footer{
+    width: auto;
+}
+
+}

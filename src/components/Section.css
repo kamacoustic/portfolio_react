@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Rubik:ital,wght@1,900&display=swap');
+
+.section{
+    /* border-top: 3px solid whitesmoke; */
+    /* border-bottom: 3px solid black; */
+    min-height: 75vh;
+    display: flex;
+    /* flex: 1; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    min-width: min-content ; 
+    
+}
+
+.section > h1 {
+    font-size: 100px;
+    margin-bottom: 0;
+    font-family: 'Rubik', sans-serif;;  
+}
+
+/* Home section video as background */
+
+#Home.section {
+  margin-bottom: 1em;
+  position: relative;
+  height:300px;
+  width:100%;
+  overflow: hidden;
+}
+
+#Home.section #home_video_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  overflow: hidden; 
+  z-index: -100;
+  opacity: 65%;
+}
+
+#Home.section > h2 {
+  font-weight: 200;
+  font-size: 1.8em;
+  letter-spacing: 0.5em;
+}
+
+
+
+/* Hides the h1 to allow for nav function to remain */
+#Contact.section > h1 {
+  display: none;
+}
+
+#Home.section > h1 {
+  display: none
+}
+
+ /* Icons for about section  */
+.section .icons {
+  font-size: 8vw;
+  color: darkgreen;
+}  
+
+.icons > i {
+  margin-right: 25px;
+}
+
+p {
+  margin: 5em;
+}
+
+/* Button for contact section */
+
+.cta-btn {
+  padding: 12px 30px;
+  font-size: 20px;
+  background-color: forestgreen;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.1em;
+  color: #fff;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  
+}
+
+/*Glowing letters on hover*/
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff1ff, 0 0 30px #fff1ff, 0 0 40px #fff1ff, 0 0 50px #fff1ff, 0 0 60px #fff1ff, 0 0 70px #fff1ff, 0 0 80px #fff1ff;
+  }
+}
+
+
+.cta-btn:hover {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 1);
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* Responsive styles */
+
+@media only screen and (max-width: 600px){
+
+.section{
+  flex: auto;
+  min-width: min-content;
+  display: flex;
+}
+
+.cta-btn{
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 1);
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+#Home.section #home_video_bg {
+  position: absolute;
+  display: none;
+}
+#Home.section {
+  background-image: url('./images/welcome_background_mobile.jpg');
+}
+
+#Home.section > h2 {
+  color: green
+}
+}
