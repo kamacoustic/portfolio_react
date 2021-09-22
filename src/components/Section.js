@@ -1,5 +1,4 @@
 import React from 'react' 
-import { ExternalLink } from 'react-external-link'
 import './Section.css'
 
 const Section = ({secTitle, 
@@ -17,7 +16,7 @@ const Section = ({secTitle,
                   gallery_three, 
                   gallery_four,
                   contact_button,
-                  comp_icons
+                  comp_icons,
                 }) => {
 
     return (
@@ -44,8 +43,8 @@ const Section = ({secTitle,
             {/* For the contact section */}
             {contact_button}
             {comp_icons}
-           
         </div>
+        
     )
 }
 

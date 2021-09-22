@@ -14,7 +14,11 @@
     /* border-bottom: 5px solid mediumseagreen; */
 }
 
-.header > a {
+/* .header #hidden {
+  display: flex;
+} */
+
+.header .leftSide .links > a {
     margin-right: 25px;
     color:darkgreen;
     text-decoration: none;
@@ -25,7 +29,7 @@
 }
 
 /* Animation for nav link underlines */
-.header > a::before {
+.header .leftSide > a::before {
     color: var(--on-background);
     border-bottom: 3px solid;
     content: "";
@@ -39,19 +43,63 @@
     transition: all 0.3s ease-in-out 0s;
   }
   
-  .header > a:hover::before {
+  .header .leftSide > a:hover::before {
     visibility: visible;
     transform: scaleX(1);
+  }
+
+  .header button {
+    display: none;
   }
 
   @media only screen and (max-width: 600px){
     
 
-    .header {
-      /* display: flex; */
+    /* .header {
+      display: flex;
       position: fixed;
       width: 100%;
     }
+     */
+
+    /* .leftSide > a {
+      display: none;
+    } */
+
+    .links {
+      display: none;
+    }
+
+    .header .leftSide #hidden {
+      position: absolute;
+      left: 0px;
+      /* top: 80px; */
+      height: auto;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 30px;
+    }
+
+    .header .leftSide #hidden button {
+      display: flex;
+      align-items: center;
+    }
+
+ /* .leftSide #hidden > a {
+      margin: 10px ; 
+      font-size: 30px ;
+    } */
+
+    .header .leftSide button {
+      display: flex;
+    }
+
+    /* .header .leftSide > a {
+      display: none;
+    } */
 
 
    

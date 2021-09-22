@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Section from './components/Section'
-import Modal from './components/Modal'
 import Gallery from './components/Gallery'
 import IconLinks from './components/IconLinks'
 import Doomzu_Pic from './components/images/doomzu.jpg'
@@ -10,39 +9,24 @@ import Bot_Pic from './components/images/joke_teller_bot.jpg'
 import Breathe_Pic from './components/images/just_breathe.jpg'
 import HnN_Pic from './components/images/h_n.jpg'
 import bg_vid from './components/videos/green_white.mp4'
+import ModalJoke from './components/Modals/ModalJoke'
+import ModalHere from './components/Modals/ModalHere'
+import ModalDoom from './components/Modals/ModalDoom'
+import ModalBreathe from './components/Modals/ModalBreathe'
 import './App.css';
 
-class App extends React.Component {
-  constructor(props){
-    super(props)
+const App = () => {
+ 
+  const [ModalOpen, setOpenModal ] = useState(false)
 
-    this.secTitle = this.secTitle
-    this.secText = this.secText
-    this.secHeader = this.secHeader
-    this.secFooter = this.secFooter
-    this.vid = this.vid
-    this.htmlIcon = this.htmlIcon
-    this.cssIcon = this.cssIcon
-    this.jsIcon = this.jsIcon
-    this.nodeIcon = this.nodeIcon
-    this.reactIcon = this.reactIcon
-    this.gallery_one = this.gallery_one
-    this.gallery_two = this.gallery_two
-    this.gallery_three = this.gallery_three
-    this.gallery_four = this.gallery_four
-    this.gallery_pic = this.gallery_pic
-    this.gallery_desc = this.gallery_desc
-    this.gallery_link = this.gallery_link
-    this.contact_button = this.contact_button
-    this.contact_icon_git = this.contact_icon_git
-    this.contact_icon_link = this.contact_icon_link
-    this.comp_icons = this.comp_icons
+  const openModal = () => {
+   setOpenModal(true)
   }
 
+ 
 
 
-
-  render(){
+  
     return (
       <div>
         <Header />
@@ -74,35 +58,45 @@ class App extends React.Component {
         secTitle="Works" 
         secHeader= {"Here are some examples of what I've created lately. . . ."}
 
-        gallery_one= {<Gallery
-          gallery_pic ={<img className="bot_pic" src={Bot_Pic} alt="bot" />}
-          gallery_desc={<p>J, the joke telling bot! Utilizing two different api's
-          and asynchronous JS to feed jokes and transcribe them into speech, delight yourself with this
-          fun little "bot."</p>}
-          gallery_link={"http://themojoworks.com/portfolio_main/joke_teller_bot/index.html"}
+        gallery_one= {<Gallery 
+         
+              gallery_pic ={<img onClick={openModal} className="bot_pic" src={Bot_Pic} alt="bot" />}
+              gallery_desc={<p>J, the joke telling bot! Utilizing two different api's
+              and asynchronous JS to feed jokes and transcribe them into speech, delight yourself with this
+              fun little "bot."</p>}
+              gallery_link={"http://themojoworks.com/portfolio_main/joke_teller_bot/index.html"}
+              modal={ModalOpen && <ModalJoke closeModal={setOpenModal} />}
           />}
 
+          
+         
+
         gallery_two={<Gallery
-          gallery_pic = {<img className="doomzu_pic" src={Doomzu_Pic} alt="doomzu" />}
-          gallery_desc = {<p>A time capsule of sorts for my friends and I D&D campaign! 
-            This was built from scratch utilzing HTML5, CSS, and Javascript. No, I did
-            not draw the awesome images but I utilized Photoshop to be able to use them
-            in the site. </p>}
-          gallery_link={"http://themojoworks.com/doomzu/index.html"}
+              gallery_pic = {<img  onClick={openModal} className="doomzu_pic" src={Doomzu_Pic} alt="doomzu" />}
+              gallery_desc = {<p>A time capsule of sorts for my friends and I D&D campaign! 
+                This was built from scratch utilzing HTML5, CSS, and Javascript. No, I did
+                not draw the awesome images but I utilized Photoshop to be able to use them
+                in the site. </p>}
+              gallery_link={"http://themojoworks.com/doomzu/index.html"}
+              modal={ModalOpen && <ModalDoom closeModal={setOpenModal} />}
+             
           />}
 
         gallery_three= {<Gallery
-          gallery_pic= {<img className="breathe_pic" src={Breathe_Pic} alt="breathe" />}
-          gallery_desc= {<p>A simple yet powerful little display of CSS animation and time based
-            Javascript!</p>}
-          gallery_link={"http://themojoworks.com/portfolio_main/just_breathe/breatheindex.html"}
+              gallery_pic= {<img onClick={openModal}  className="breathe_pic" src={Breathe_Pic} alt="breathe" />}
+              gallery_desc= {<p>A simple yet powerful little display of CSS animation and time based
+                Javascript!</p>}
+              gallery_link={"http://themojoworks.com/portfolio_main/just_breathe/breatheindex.html"}
+              modal={ModalOpen && <ModalBreathe closeModal={setOpenModal} />}
         /> }
 
         gallery_four= {<Gallery
-          gallery_pic= {<img className="hnn_pic" src={HnN_Pic} alt="h_n" />}
-          gallery_desc= {<p>A nifty weather app that utilzes Node, Express, Handlebars, and two API's to bring you the current weather conditions
-          based on whichever major city lies near. </p>}
-          gallery_link={"http://mojica-weather-application.herokuapp.com"}
+              gallery_pic= {<img onClick={openModal}  className="hnn_pic" src={HnN_Pic} alt="h_n" />}
+              gallery_desc= {<p>A nifty weather app that utilzes Node, Express, Handlebars, and two API's to bring you the current weather conditions
+              based on whichever major city lies near. </p>}
+              gallery_link={"http://mojica-weather-application.herokuapp.com"}
+              modal={ModalOpen && <ModalHere closeModal={setOpenModal} />}
+              
         /> }
         
         secFooter={"Aaaaand of course this landing page itself! Now brought to you by REACT!"}
@@ -112,18 +106,21 @@ class App extends React.Component {
         <Section
         secTitle="Contact" 
         secHeader="So you want to get ahold of me eh?"  
-        contact_button={<button onClick={this.openModal} className="cta-btn" id="open">Email Me!</button>}
+        contact_button={<button  className="cta-btn" id="open">Email Me!</button>}
         
 
         comp_icons={<IconLinks
           contact_icon_git={<i className="fab fa-github"></i>}
           contact_icon_link={<i className="fab fa-linkedin"></i>} />}
         />
+
+       
         
+    
         <Footer />
       </div>
     )
-  }
+  
 
 }
 

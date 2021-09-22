@@ -11,7 +11,7 @@
     border: 3px solid #777;
   }
   
-  .gallery_container a > img {
+  .gallery_container > img {
     width: 100%;
     height: auto;
     border-radius: 43px;

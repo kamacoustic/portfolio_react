@@ -1,0 +1,80 @@
+.modalBackground{
+  width: 100vw;
+  height:100vh;
+  background-color: rgba(200, 200, 200, 0.6);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modalContainer{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;  
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modalContainer .title {
+  background: #fff;
+  color:darkgreen;
+  /* padding: 15px; */
+  text-align: center;
+}
+
+.titleCloseBtn{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.titleCloseBtn > button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modalContainer .body {
+  text-align: center;
+  color: darkgreen;
+  /* padding: 5px; */ 
+}
+
+.modalContainer .body h3 {
+  font-size: small;
+  word-wrap: break-word;
+}
+
+.modalContainer .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer .footer a button {
+  background-color: forestgreen;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.modalContainer .footer #cancelBtn {
+  background-color: crimson;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
+}
