@@ -1,20 +1,21 @@
-import React, { useEffect }  from 'react' 
+import React, {  useEffect }  from 'react' 
 import ReactDom from 'react-dom'
 import { ExternalLink } from 'react-external-link'
 import './Modal.css'
 
 const ModalJoke = ({ closeModal }) => {
 
+    
     useEffect(() => {
         window.addEventListener('click', (e) => {
             const modalBackground = document.getElementById("background")
-            e.preventDefault()
+            
             
             
 
             if (e.target === modalBackground) {
                 closeModal(false)
-            }
+            } 
         })
     })
     
@@ -37,7 +38,7 @@ const ModalJoke = ({ closeModal }) => {
                     <button onClick={() => closeModal(false)} id="cancelBtn">Cancel</button>
                 
                     <ExternalLink href="http://themojoworks.com/portfolio_main/joke_teller_bot/index.html">
-                        <button >Continue</button>
+                        <button onClick={() => closeModal(false)} >Continue</button>
                     </ExternalLink>
                 </div>
                     

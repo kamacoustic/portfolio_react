@@ -9,7 +9,7 @@ const ModalDoom = ({ closeModal }) => {
     useEffect(() => {
         window.addEventListener('click', (e) => {
             const modalBackground = document.getElementById("background")
-            e.preventDefault()
+          
             
             
 

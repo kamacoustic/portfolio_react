@@ -95,6 +95,11 @@
 
     .header .leftSide button {
       display: flex;
+      background-color: darkgreen;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      
     }
 
     /* .header .leftSide > a {

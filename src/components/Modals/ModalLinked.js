@@ -1,11 +1,11 @@
-import React, { useEffect }  from 'react' 
+import React, {  useEffect }  from 'react' 
 import ReactDom from 'react-dom'
 import { ExternalLink } from 'react-external-link'
-
 import './Modal.css'
 
-const Modal = ({ closeModal }) => {
+const ModalLinked = ({ closeModal }) => {
 
+    
     useEffect(() => {
         window.addEventListener('click', (e) => {
             const modalBackground = document.getElementById("background")
@@ -15,13 +15,13 @@ const Modal = ({ closeModal }) => {
 
             if (e.target === modalBackground) {
                 closeModal(false)
-            }
+            } 
         })
     })
     
     
     
-    return  ReactDom.createPortal(
+    return ReactDom.createPortal  (
         
             <div className="modalBackground" id="background">
             <div className="modalContainer">
@@ -31,14 +31,14 @@ const Modal = ({ closeModal }) => {
                 </div>
                 <div className="body">
                     <p>Page will open in new tab</p>
-                    <h3>"http://themojoworks.com/doomzu/index.html"</h3>
+                    <h3>"https://www.linkedin.com/in/themojoworksinc/"</h3>
                 </div>
                 <div className="footer"> 
                 
                     <button onClick={() => closeModal(false)} id="cancelBtn">Cancel</button>
                 
-                    <ExternalLink href="http://themojoworks.com/doomzu/index.html">
-                        <button onClick={() => closeModal(false)}>Continue</button>
+                    <ExternalLink href="https://www.linkedin.com/in/themojoworksinc/">
+                        <button onClick={() => closeModal(false)} >Continue</button>
                     </ExternalLink>
                 </div>
                     
@@ -46,7 +46,7 @@ const Modal = ({ closeModal }) => {
                 
             </div>
             </div>, document.getElementById('modal')
-      
+       
     )
 
         
@@ -56,4 +56,4 @@ const Modal = ({ closeModal }) => {
     
 }
 
-export default Modal
+export default ModalLinked
