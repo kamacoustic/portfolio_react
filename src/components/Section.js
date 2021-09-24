@@ -17,6 +17,7 @@ const Section = ({secTitle,
                   gallery_four,
                   contact_button,
                   comp_icons,
+                  modal_contact
                 }) => {
 
     return (
@@ -42,6 +43,7 @@ const Section = ({secTitle,
             </div>
             {/* For the contact section */}
             {contact_button}
+            {modal_contact}
             {comp_icons}
         </div>
         

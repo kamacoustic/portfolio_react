@@ -15,6 +15,7 @@ import ModalDoom from './components/Modals/ModalDoom'
 import ModalBreathe from './components/Modals/ModalBreathe'
 import ModalGit from './components/Modals/ModalGit'
 import ModalLinked from './components/Modals/ModalLinked'
+import ModalContact from './components/Modals/ModalContact'
 import './App.css';
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
   const [ModalHereOpen, setOpenHereModal] = useState(false)
   const [ModalGitOpen, setOpenGitModal] = useState(false)
   const [ModalLinkedOpen, setOpenLinkedModal] = useState(false)
+  const [ModalContactOpen, setOpenContactModal] = useState(false)
 
   const openModalJoke = () => {
    setOpenJokeModal(true)
@@ -48,6 +50,10 @@ const App = () => {
 
   const openModalLinked = () => {
     setOpenLinkedModal(true)
+  }
+
+  const openModalContact = () => {
+    setOpenContactModal(true)
   }
 
 
@@ -137,7 +143,8 @@ const App = () => {
         <Section
         secTitle="Contact" 
         secHeader="So you want to get ahold of me eh?"  
-        contact_button={<button  className="cta-btn" id="open">Email Me!</button>}
+        contact_button={<button onClick={openModalContact} className="cta-btn" id="open">Email Me!</button>}
+        modal_contact={ModalContactOpen && <ModalContact closeModal={setOpenContactModal} />}
         
 
         comp_icons={<IconLinks

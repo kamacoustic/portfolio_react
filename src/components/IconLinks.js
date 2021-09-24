@@ -1,5 +1,4 @@
 import React from 'react' 
-import { ExternalLink } from 'react-external-link'
 import './IconLink.css'
 
 const IconLinks = ({ contact_icon_git, contact_icon_link, modal_git, modal_linked}) => {
