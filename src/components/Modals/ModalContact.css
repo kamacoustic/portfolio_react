@@ -19,6 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
   }
 
   
@@ -35,6 +36,7 @@
     width: 400px;  
     animation-name: modalopen;
     animation-duration: var(--modal-duration);
+    padding: 0px 20px;
   }
   
   .modalContainer .title {
@@ -73,6 +75,22 @@
     height: 152px;
     padding: auto;
     resize: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    .modal-form .form-input{
+     width: 95%;
+    }
+
+    
+    .modal-content{
+      margin-left: 5px;
+      padding: 5px;
+    } 
+
+  
+
   }
 
   
