@@ -1,21 +1,45 @@
 import React, { useEffect, useState } from 'react' 
 import ReactDom from 'react-dom'
+import { send } from 'emailjs-com'
 import './ModalContact.css'
+
+
 
 
 const ModalContact = ({closeModal}) => {
 
- {/*   const [contactInfo, setContactInfo] = useState({
-        name: '',
-        email: '',
+   const [contactInfo, setContactInfo] = useState({
+        from_name: '',
+        to_name: 'Mr. Mojo',
+        reply_to: '',
         message: ''
     })
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault()
-        
+    const [thanksMessage, setThanksMessage] = useState(false)
 
-    } */}
+    const toSubmit = (e) => {
+        e.preventDefault()
+        send(
+            'service_1p2rvpc',
+            'template_5l6ljre',
+            contactInfo,
+            'user_lqLr167J4YsZhVWPD9Ew4'
+        )
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text)
+                setThanksMessage(true)
+                
+            })
+            .catch((err) => {
+                console.log('FAILED', err)
+            })
+    }
+
+    const handleChange = (e) => {
+        setContactInfo({...contactInfo, [e.target.name]: e.target.value})
+    }
+  
+
 
     useEffect(() => {
         window.addEventListener('click', (e) => {
@@ -28,6 +52,11 @@ const ModalContact = ({closeModal}) => {
         })
     })
 
+    
+   
+
+    
+
     return ReactDom.createPortal (
         <div className="modalBackground" id="background">
             <div className="modalContainer">
@@ -37,13 +66,15 @@ const ModalContact = ({closeModal}) => {
 
                 <div className="modal-content" id="modal-box">
                     <p>I will respond as soon as I am able! Thank you!</p>
-                    <form className="modal-form" action="index.php?did_email=1#contact" method="post">
+                    <form className="modal-form" method="post" onSubmit={toSubmit}>
                         <div>
                             <label htmlFor="name">Name or Company</label>
                             <input 
                             className="form-input" 
                              type="text" 
-                             id="name" 
+                             name="from_name" 
+                             onChange={handleChange}
+                             value={contactInfo.from_name}
                              placeholder="Enter Name" 
                              />
                         </div>
@@ -52,25 +83,31 @@ const ModalContact = ({closeModal}) => {
                             <input 
                             className="form-input" 
                             type="email" 
-                            id="email" 
+                            name="reply_to" 
+                            onChange={handleChange}
+                            value={contactInfo.reply_to}
                             placeholder="Enter Email" 
                             />
                         </div>
                         <div>
                             <textarea
-                             id="message"
                               name="message" 
                               placeholder="Type Message Here"
+                              onChange={handleChange}
+                              value={contactInfo.message}
                               >
                               </textarea>
                         </div>
-                        <input type="hidden" id="process-email" name="process-email" value="1" />
+                        
                         <input 
                         id="modal-submit" 
                         className="submit-btn" 
                         type="submit" 
                         value="submit"
                         />
+                        <div>
+                        {thanksMessage && <h3>Thanks!</h3>}
+                        </div>
                     </form>
                 </div>
             </div>
