@@ -16,6 +16,7 @@ const ModalContact = ({closeModal}) => {
     })
 
     const [thanksMessage, setThanksMessage] = useState(false)
+    const [errorMessage, setErrorMessage] = useState(false)
 
     const toSubmit = (e) => {
         e.preventDefault()
@@ -32,6 +33,7 @@ const ModalContact = ({closeModal}) => {
             })
             .catch((err) => {
                 console.log('FAILED', err)
+                setErrorMessage(true)
             })
     }
 
@@ -107,6 +109,7 @@ const ModalContact = ({closeModal}) => {
                         />
                         <div>
                         {thanksMessage && <h3>Thanks!</h3>}
+                        {errorMessage && <h3>Error! Please close modal by clicking outside of it and try again</h3>}
                         </div>
                     </form>
                 </div>

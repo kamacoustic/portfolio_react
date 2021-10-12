@@ -15,6 +15,7 @@ const Section = ({secTitle,
                   gallery_two, 
                   gallery_three, 
                   gallery_four,
+                  gallery_five,
                   contact_button,
                   comp_icons,
                   modal_contact
@@ -31,6 +32,7 @@ const Section = ({secTitle,
             {gallery_two}
             {gallery_three}
             {gallery_four}
+            {gallery_five}
             <h2>{secFooter}</h2>
             <p>{secText}</p>
             {/* Icons for About section */}

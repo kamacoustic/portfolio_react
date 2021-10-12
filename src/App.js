@@ -8,6 +8,7 @@ import Doomzu_Pic from './components/images/doomzu.jpg'
 import Bot_Pic from './components/images/joke_teller_bot.jpg'
 import Breathe_Pic from './components/images/just_breathe.jpg'
 import HnN_Pic from './components/images/h_n.jpg'
+import Shop_Pic from './components/images/shop.png'
 import bg_vid from './components/videos/green_white.mp4'
 import ModalJoke from './components/Modals/ModalJoke'
 import ModalHere from './components/Modals/ModalHere'
@@ -16,10 +17,12 @@ import ModalBreathe from './components/Modals/ModalBreathe'
 import ModalGit from './components/Modals/ModalGit'
 import ModalLinked from './components/Modals/ModalLinked'
 import ModalContact from './components/Modals/ModalContact'
+import ModalShop from './components/Modals/ModalShop'
 import './App.css';
 
 const App = () => {
  
+  {/* state management for modals */}
   const [ModalJokeOpen, setOpenJokeModal ] = useState(false)
   const [ModalDoomOpen, setOpenDoomModal] = useState(false)
   const [ModalBreatheOpen, setOpenBreatheModal] = useState(false)
@@ -27,6 +30,7 @@ const App = () => {
   const [ModalGitOpen, setOpenGitModal] = useState(false)
   const [ModalLinkedOpen, setOpenLinkedModal] = useState(false)
   const [ModalContactOpen, setOpenContactModal] = useState(false)
+  const [ModalShopOpen, setOpenShopModal] = useState(false)
 
   const openModalJoke = () => {
    setOpenJokeModal(true)
@@ -54,6 +58,10 @@ const App = () => {
 
   const openModalContact = () => {
     setOpenContactModal(true)
+  }
+
+  const openModalShop = () => {
+    setOpenShopModal(true)
   }
 
 
@@ -92,7 +100,7 @@ const App = () => {
         <Section 
         secTitle="Works" 
         secHeader= {"Here are some examples of what I've created lately. . . ."}
-
+          
         gallery_one= {<Gallery 
          
               gallery_pic ={<img onClick={openModalJoke} className="bot_pic" src={Bot_Pic} alt="bot" />}
@@ -132,9 +140,19 @@ const App = () => {
               based on whichever major city lies near. </p>}
               gallery_link={"http://mojica-weather-application.herokuapp.com"}
               modal={ModalHereOpen && <ModalHere closeModal={setOpenHereModal}/>}
+              /> }
+
+
+        gallery_five= {<Gallery 
+          gallery_pic= {<img onClick={openModalShop} className="shop_pic" src={Shop_Pic} alt="shop" />}
+          gallery_desc= {<p>My first Shopify demo site! I used Shopify to "reimagine" the website for my 
+          favorite local ramen house!</p>}
+          gallery_link={"https://mojos-workshop.myshopify.com/"}
+          modal={ModalShopOpen && <ModalShop closeModal={setOpenShopModal} />}
+          />}
               
               
-        /> }
+        
         
         secFooter={"Aaaaand of course this landing page itself! Now brought to you by REACT!"}
         secText={"Code is available for viewing at my Github! Icon Link to page down below!"}
