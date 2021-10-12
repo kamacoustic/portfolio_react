@@ -47,6 +47,11 @@
   letter-spacing: 0.5em;
 }
 
+#linkToPrev {
+  text-decoration: none;
+  color: #fff;
+}
+
 
 
 /* Hides the h1 to allow for nav function to remain */

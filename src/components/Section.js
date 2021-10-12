@@ -18,7 +18,8 @@ const Section = ({secTitle,
                   gallery_five,
                   contact_button,
                   comp_icons,
-                  modal_contact
+                  modal_contact,
+                  linkToPrev
                 }) => {
 
     return (
@@ -34,6 +35,7 @@ const Section = ({secTitle,
             {gallery_four}
             {gallery_five}
             <h2>{secFooter}</h2>
+            {linkToPrev}
             <p>{secText}</p>
             {/* Icons for About section */}
             <div className ='icons'>

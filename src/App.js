@@ -155,6 +155,7 @@ const App = () => {
         
         
         secFooter={"Aaaaand of course this landing page itself! Now brought to you by REACT!"}
+        linkToPrev={<a id="linkToPrev" href="http://themojoworks.com/portfolio_main/" target="_blank">Click here to visit previous portfolio site, not served by React</a>}
         secText={"Code is available for viewing at my Github! Icon Link to page down below!"}
         />
 
