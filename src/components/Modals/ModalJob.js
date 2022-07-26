@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 import { ExternalLink } from 'react-external-link'
 import './Modal.css'
 
-const ModalShop = ({ closeModal }) => {
+const ModalJob = ({ closeModal }) => {
 
     useEffect(() => {
         window.addEventListener('click', (e) => {
@@ -30,13 +30,13 @@ const ModalShop = ({ closeModal }) => {
                 </div>
                 <div className="body">
                     <p>Page will open in new tab</p>
-                    <h3>"https://mojos-workshop.myshopify.com/"</h3>
+                    <h3>"https://ancient-scrubland-95145.herokuapp.com/"</h3>
                 </div>
                 <div className="footer"> 
                 
                     <button onClick={() => closeModal(false)} id="cancelBtn">Cancel</button>
                 
-                    <ExternalLink href="https://mojos-workshop.myshopify.com/">
+                    <ExternalLink href="https://ancient-scrubland-95145.herokuapp.com/">
                         <button onClick={() => closeModal(false)}>Continue</button>
                     </ExternalLink>
                 </div>
@@ -55,4 +55,4 @@ const ModalShop = ({ closeModal }) => {
     
 }
 
-export default ModalShop
+export default ModalJob

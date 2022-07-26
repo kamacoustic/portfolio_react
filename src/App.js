@@ -8,7 +8,8 @@ import Doomzu_Pic from './components/images/doomzu.jpg'
 import Bot_Pic from './components/images/joke_teller_bot.jpg'
 import Breathe_Pic from './components/images/just_breathe.jpg'
 import HnN_Pic from './components/images/h_n.jpg'
-import Shop_Pic from './components/images/shop.png'
+import Job_Pic from './components/images/job.png'
+import Steel_Pic from './components/images/c_steel.png'
 import bg_vid from './components/videos/green_white.mp4'
 import ModalJoke from './components/Modals/ModalJoke'
 import ModalHere from './components/Modals/ModalHere'
@@ -17,7 +18,8 @@ import ModalBreathe from './components/Modals/ModalBreathe'
 import ModalGit from './components/Modals/ModalGit'
 import ModalLinked from './components/Modals/ModalLinked'
 import ModalContact from './components/Modals/ModalContact'
-import ModalShop from './components/Modals/ModalShop'
+import ModalJob from './components/Modals/ModalJob'
+import ModalSteel from './components/Modals/ModalSteel'
 import './App.css';
 
 const App = () => {
@@ -30,7 +32,8 @@ const App = () => {
   const [ModalGitOpen, setOpenGitModal] = useState(false)
   const [ModalLinkedOpen, setOpenLinkedModal] = useState(false)
   const [ModalContactOpen, setOpenContactModal] = useState(false)
-  const [ModalShopOpen, setOpenShopModal] = useState(false)
+  const [ModalJobOpen, setOpenJobModal] = useState(false)
+  const [ModalSteelOpen, setOpenSteelModal] = useState(false)
 
   const openModalJoke = () => {
    setOpenJokeModal(true)
@@ -60,8 +63,12 @@ const App = () => {
     setOpenContactModal(true)
   }
 
-  const openModalShop = () => {
-    setOpenShopModal(true)
+  const openModalJob = () => {
+    setOpenJobModal(true)
+  }
+
+  const openModalSteel = () => {
+    setOpenSteelModal(true)
   }
 
 
@@ -84,11 +91,11 @@ const App = () => {
 
         <Section
          secTitle="About" 
-         secText="My name is Kelvin Joel Mojica and I am a web developer looking to take my expertise to
-         the next level in helping anyone and everyone when it comes to their development and or software needs.
+         secText="My name is Kelvin Joel Mojica and I am a web developer looking to continue to utilize my expertize
+         when it comes to helping anyone and everyone with their development and or software needs.
          With technology and the internet becoming more and more present within our daily lives, it is imperative
          that one heeds the new age pivot and answer the calls inbound. Brandishing expertise in HTML5, CSS, Javascript,
-         Node.js, and React, I am more than confident in utilzing my ever-growing skillset and natural resourcefulness 
+         and the MERN stack I am more than confident in utilzing my ever-growing skillset and natural resourcefulness 
          to provide the best solutions possible!" 
          htmlIcon= {<i className="fab fa-html5"></i>}
          cssIcon={<i className="fab fa-css3"></i>}
@@ -144,12 +151,19 @@ const App = () => {
 
 
         gallery_five= {<Gallery 
-          gallery_pic= {<img onClick={openModalShop} className="shop_pic" src={Shop_Pic} alt="shop" />}
-          gallery_desc= {<p>My first Shopify demo site! I used Shopify to "reimagine" the website for my 
-          favorite local ramen house!</p>}
-          gallery_link={"https://mojos-workshop.myshopify.com/"}
-          modal={ModalShopOpen && <ModalShop closeModal={setOpenShopModal} />}
+          gallery_pic= {<img onClick={openModalJob} className="job_pic" src={Job_Pic} alt="job" />}
+          gallery_desc= {<p>A fullstack job tracking app created using the MERN stack! Uses JSON Webtoken for authentication! </p>}
+          gallery_link={"https://ancient-scrubland-95145.herokuapp.com/"}
+          modal={ModalJobOpen && <ModalJob closeModal={setOpenJobModal} />}
           />}
+
+
+          gallery_six= {<Gallery 
+            gallery_pic= {<img onClick={openModalSteel} className="c_steel_pic" src={Steel_Pic} alt="steel" />}
+            gallery_desc= {<p>Responsive landing page for a local music group! Created and built utilizing React! </p>}
+            gallery_link={"https://cincy-steel.herokuapp.com/"}
+            modal={ModalSteelOpen && <ModalSteel closeModal={setOpenSteelModal} />}
+            />}
               
               
         

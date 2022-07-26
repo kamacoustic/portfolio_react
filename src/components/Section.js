@@ -10,12 +10,10 @@ const Section = ({secTitle,
                   cssIcon, 
                   jsIcon, 
                   nodeIcon, 
-                  reactIcon, 
-                  gallery_one, 
+                  reactIcon,  
                   gallery_two, 
-                  gallery_three, 
-                  gallery_four,
                   gallery_five,
+                  gallery_six,
                   contact_button,
                   comp_icons,
                   modal_contact,
@@ -29,11 +27,9 @@ const Section = ({secTitle,
             {/* Video for home section*/}
             {vid}
             {/* This is for the Works section */}
-            {gallery_one}
-            {gallery_two}
-            {gallery_three}
-            {gallery_four}
+            {gallery_six}
             {gallery_five}
+            {gallery_two}
             <h2>{secFooter}</h2>
             {linkToPrev}
             <p>{secText}</p>
